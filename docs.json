@@ -35,7 +35,8 @@
           {
             "group": "Other",
             "pages": [
-              "error"
+              "error",
+              "ec2"
             ]
           }
         ]
