@@ -3,17 +3,15 @@ title: "Google Workspace API Setup"
 description: "How to configure Google Cloud for domain-wide delegation with ConfigView."
 ---
 
-# 🔧 Google Cloud Setup Instructions for Google Workspace Integration
-
 This guide walks you through setting up API access using a **Google Cloud Project**, **Service Account**, and **Domain-Wide Delegation** for ConfigView.
 
 ---
 
 ## ✅ Step 1: Create a Google Cloud Project
 
-1. Go to: [https://console.cloud.google.com/](https://console.cloud.google.com/)
-2. Click the **project dropdown** (top-left) > **New Project**
-3. **Recommended Project Name:**  
+1. Go to: https://console.cloud.google.com/
+2. Click the **project dropdown** (top-left) \> **New Project**
+3. **Recommended Project Name:**\
    `configview-integration`
 4. Choose your **Organization** and **Location**
 5. Click **Create**
@@ -35,16 +33,16 @@ In the `configview-integration` project:
 
 ## ✅ Step 3: Create a Service Account
 
-1. Visit: [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts)
-2. Click **+ CREATE SERVICE ACCOUNT**
-3. Name it:  
-   `configview-sa`
-4. Click **Create and Continue**
-5. (Optional) Skip assigning roles
-6. Click **Done**
-7. Open the service account > go to **Details** > click **Edit**
-8. Enable **G Suite Domain-wide Delegation**
-9. Set product name to: `ConfigView App`
+ 1. Visit: [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts)
+ 2. Click **\+ CREATE SERVICE ACCOUNT**
+ 3. Name it:\
+    `configview-sa`
+ 4. Click **Create and Continue**
+ 5. (Optional) Skip assigning roles
+ 6. Click **Done**
+ 7. Open the service account \> go to **Details** \> click **Edit**
+ 8. Enable **G Suite Domain-wide Delegation**
+ 9. Set product name to: `ConfigView App`
 10. Click **Save**
 
 ---
@@ -52,21 +50,21 @@ In the `configview-integration` project:
 ## ✅ Step 4: Create and Rename JSON Key
 
 1. Go to the **Keys** tab
-2. Click **Add Key** > **Create new key**
-3. Select **JSON** > click **Create**
+2. Click **Add Key** \> **Create new key**
+3. Select **JSON** \> click **Create**
 4. A key file will download
-5. 🔁 **Rename the file to:**  
-   `google_admin.json`  
+5. 🔁 **Rename the file to:**\
+   `google_admin.json`\
    _This is required for ConfigView to authenticate with Google Workspace._
 
 ---
 
 ## ✅ Step 5: Authorize Domain-Wide Delegation in Google Admin
 
-1. Go to: [https://admin.google.com/](https://admin.google.com/)
+1. Go to: https://admin.google.com/
 2. Navigate to:
-   - **Security** > **Access and Data Control** > **API Controls**
-3. Scroll to **Domain-wide Delegation** > click **Manage Domain-Wide Delegation**
+   - **Security** \> **Access and Data Control** \> **API Controls**
+3. Scroll to **Domain-wide Delegation** \> click **Manage Domain-Wide Delegation**
 4. Click **Add New**
 5. Paste the **Client ID** from your service account
 6. Paste the following scopes:
@@ -123,9 +121,9 @@ https://www.googleapis.com/auth/gmail.readonly
 
 ## ✅ Step 6: Upload Credentials to ConfigView
 
-1. Visit: [https://configview-dashboard-frontend.vercel.app/admin/external/](https://configview-dashboard-frontend.vercel.app/admin/external/)
+1. Visit: https://configview-dashboard-frontend.vercel.app/admin/external/
 2. Upload the renamed `google_admin.json` file
-3. You’re done!
+3. You’re done\!
 4. 🗑️ **Note:** You should **delete the JSON file** from your computer after upload to avoid security risk.
 
 ---
