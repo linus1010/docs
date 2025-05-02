@@ -36,8 +36,7 @@
             "group": "Other",
             "pages": [
               "error",
-              "ec2",
-              "google-workspace"  // Added the new page here
+              "ec2"
             ]
           }
         ]
