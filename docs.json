@@ -33,7 +33,7 @@
             ]
           },
           {
-            "group": "Other",
+            "group": "Configview secrets setup",
             "pages": [
               "error",
               "ec2",
