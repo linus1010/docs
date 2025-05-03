@@ -73,8 +73,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "App",
+      "href": "https://configview-dashboard-frontend.vercel.app/home/"
     }
   },
   "footer": {
