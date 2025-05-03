@@ -23,12 +23,12 @@
           {
             "group": "How to use Configview",
             "pages": [
-              "Query Board",
-              "Cron Board",
-              "Secret Board",
-              "External Board",
-              "App Board",
-              "Chart Board"
+              "query-board",
+              "cron-board",
+              "secret-board",
+              "external-board",
+              "app-board",
+              "chart-board"
             ]
           },
           {
