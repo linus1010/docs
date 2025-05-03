@@ -21,6 +21,14 @@
             ]
           },
           {
+            "group": "Retrieving data",
+            "pages": [
+              "Crowdstrike",
+              "google",
+              "Amazon Ec2"
+            ]
+          },
+          {
             "group": "Configview secrets setup",
             "pages": [
               "error",
