@@ -21,6 +21,17 @@
             ]
           },
           {
+            "group": "How to use Configview",
+            "pages": [
+              "Query Board",
+              "Cron Board",
+              "Secret Board",
+              "External Board",
+              "App Board",
+              "Chart Board"
+            ]
+          },
+          {
             "group": "Retrieving data",
             "pages": [
               "Crowdstrike",
@@ -73,8 +84,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "App",
-      "href": "https://configview-dashboard-frontend.vercel.app/home/"
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
     }
   },
   "footer": {
