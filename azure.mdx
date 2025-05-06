@@ -60,30 +60,10 @@ Credentials are required for your application to authenticate itself to Azure AD
 
 1. In your newly registered application, navigate to **API Permissions** from the left-hand menu.
 2. Click **Add a permission**.
-3. Choose the appropriate API:
-   - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).
-   - **Azure Management API** (for Azure resource data such as Virtual Machines and Storage).
-   - You can search for other specific APIs if needed.
-4. Select the required permissions:
-   - **Delegated permissions** (if accessing data on behalf of a signed-in user).
-   - **Application permissions** (if the app runs as a background service without a signed-in user).
-5. Select the specific permissions required for your use case.
-6. Click **Add Permissions**.
-7. Click **Grant Admin Consent for [Your Organization Name]** (required for **Application permissions** to function properly and often for high-privilege **Delegated permissions**). Confirm the consent dialog.
-
----
-
-## ✅ Step 6: Configure API Access (Optional - Specific to Azure Resource Management)
-
-If your application needs to access Azure resources (like reading VM data or managing Storage Accounts) using the **Azure Management API**, you need to assign the application appropriate Role-Based Access Control (RBAC) roles on the subscription, resource group, or resource.
-
-1. Navigate to the specific Azure **Subscription**, **Resource Group**, or **Resource** the application needs access to.
-2. Select **Access Control (IAM)** from the left-hand menu.
-3. Click **Add Role Assignment**.
-4. Select a suitable **Role** (e.g., `Reader`, `Contributor`, or a more specific built-in or custom role based on the principle of least privilege).
-5. Under **Assign access to**, select `User, group, or service principal`.
-6. Search for your registered application by its **Name** or **Client ID**.
-7. Select the application.
-8. Click **Save**.
-
----
+3. Choose the appropriate API:\
+   \
+   For users groups, appliactions, devices use: 
+   - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).\
+     \
+     \
+     **Application permissions** (if the app runs as a background service without a signed-in user).
