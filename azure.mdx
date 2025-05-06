@@ -25,7 +25,7 @@ Keep this page handy as you will be copying values to here.
    [Microsoft Entra ID Overview](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview)
 2. Copy the **Tenant ID** from the **Overview** page.
 3. Return to the Configview Secrets page (from Step 1).
-4. Paste the copied **Tenant ID** into the `MSFT_TENANT_ID` value section. **Do not change the key!**
+4. Paste the copied **Tenant ID** into the `MSFT_TENANT_ID` value section. **Do not change the key\!**
 5. Save the changes in Configview.
 
 ---
@@ -49,7 +49,7 @@ Credentials are required for your application to authenticate itself to Azure AD
 
 1. Navigate to **Certificates & Secrets** in your application settings menu.
 2. Under **Client Secrets**, click **New Client Secret**.
-3. Provide a **Description** (e.g., `API Access Secret for Service`).
+3. Provide a **Description** (e.g., `Configview`).
 4. Set an **Expiration** period (e.g., 1 year, 2 years, Never - _Never is not recommended for security reasons_).
 5. Click **Add**.
 6. **`Immediately copy the Value of the secret.`** This value will not be visible again after you leave this page. You will need to create another one if you need it again. Store it securely. You do not need the Secret ID.
@@ -61,12 +61,12 @@ Credentials are required for your application to authenticate itself to Azure AD
 1. In your newly registered application, navigate to **API Permissions** from the left-hand menu.
 2. Click **Add a permission**.
 3. Choose the appropriate API:
-    - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).
-    - **Azure Management API** (for Azure resource data such as Virtual Machines and Storage).
-    - You can search for other specific APIs if needed.
+   - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).
+   - **Azure Management API** (for Azure resource data such as Virtual Machines and Storage).
+   - You can search for other specific APIs if needed.
 4. Select the required permissions:
-    - **Delegated permissions** (if accessing data on behalf of a signed-in user).
-    - **Application permissions** (if the app runs as a background service without a signed-in user).
+   - **Delegated permissions** (if accessing data on behalf of a signed-in user).
+   - **Application permissions** (if the app runs as a background service without a signed-in user).
 5. Select the specific permissions required for your use case.
 6. Click **Add Permissions**.
 7. Click **Grant Admin Consent for [Your Organization Name]** (required for **Application permissions** to function properly and often for high-privilege **Delegated permissions**). Confirm the consent dialog.
@@ -87,35 +87,3 @@ If your application needs to access Azure resources (like reading VM data or man
 8. Click **Save**.
 
 ---
-
-## ✅ Step 7: Authenticate and Use the Application
-
-With the **Client ID** (from the application's Overview page), **Client Secret Value** (from Step 4), and **Tenant ID** (from Step 2), your application can now request an OAuth 2.0 access token from the Microsoft identity platform endpoint.
-
-1. Make an HTTP POST request to the appropriate token endpoint (`https://login.microsoftonline.com/[Your-Tenant-ID]/oauth2/v2.0/token`).
-2. Include your `client_id`, `client_secret`, and `scope` (e.g., `https://graph.microsoft.com/.default` for Microsoft Graph, or `https://management.azure.com/.default` for Azure Management API) in the request body.
-3. The response will contain an `access_token`.
-4. Include this `access_token` in the `Authorization: Bearer <access_token>` header of your API requests to interact with the desired Microsoft service or Azure resource.
-
----
-
-## 📝 Creds Cheatsheet
-
-Here's a quick reference for the credentials and where to find them:
-
-- **Directory (Tenant) ID**:
-    - Variable Name: `TENANT_ID` or `AZURE_TENANT_ID`
-    - Location: Azure Portal > Azure Active Directory (Microsoft Entra ID) > Overview (Also on your App Registration Overview page)
-    - Example Storage: Configview Secrets (`MSFT_TENANT_ID`), `.env` file, application configuration
-- **Application (Client) ID**:
-    - Variable Name: `CLIENT_ID` or `AZURE_CLIENT_ID`
-    - Location: Azure Portal > App registrations > Your App > Overview page
-    - Example Storage: `.env` file, application configuration
-- **Client Secret Value**:
-    - Variable Name: `CLIENT_SECRET` or `AZURE_CLIENT_SECRET`
-    - Location: Azure Portal > App registrations > Your App > Certificates & Secrets > Client Secrets (Copy the **Value** immediately after creation in **Step 4**)
-    - Example Storage: Secure secrets store (Azure Key Vault), Configview Secrets (`MSFT_2_CLIENT_SECRET_ID`), `.env` file (for development/testing only, handle with extreme care in production)
-- **Scope**:
-    - Variable Name: `SCOPE`
-    - Value Example: `https://graph.microsoft.com/.default` (for Microsoft Graph), `https://management.azure.com/.default` (for Azure Management API)
-    - Usage: Included in the token request body
