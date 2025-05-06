@@ -25,7 +25,7 @@ Keep this page handy as you will be copying values to here.
    [Microsoft Entra ID Overview](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview)
 2. Copy the **Tenant ID** from the **Overview** page.
 3. Return to the Configview Secrets page (from Step 1).
-4. Paste the copied **Tenant ID** into the `MSFT_TENANT_ID` value section. **Do not change the key\!**
+4. Paste the copied **Tenant ID** into the `MSFT_TENANT_ID` value section. **Do not change the key!**
 5. Save the changes in Configview.
 
 ---
@@ -60,10 +60,16 @@ Credentials are required for your application to authenticate itself to Azure AD
 
 1. In your newly registered application, navigate to **API Permissions** from the left-hand menu.
 2. Click **Add a permission**.
-3. Choose the appropriate API:\
-   \
-   For users groups, appliactions, devices use: 
-   - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).\
-     \
-     \
-     **Application permissions** (if the app runs as a background service without a signed-in user).
+3. Choose the appropriate API:
+   For users, groups, applications, devices use:
+   - **Microsoft Graph** (for Office 365 services such as SharePoint, Teams, and Users).
+   - **Application permissions** (if the app runs as a background service without a signed-in user).
+
+   When adding the scopes you can scroll and select or you can copy the scopes below and select. it save stime. 
+
+   ```text
+User.Read
+User.Read.All
+User.ReadBasic.All
+
+```text
